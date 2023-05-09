@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.4.slim.js" defer></script>
+    <script src="js/bootsrap/bootstrap.min.js" defer></script>
+    <script src="js/app.js" type="module" defer></script>
+    <link rel="stylesheet" href="css/bootsrap/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <main-menu></main-menu>
+    
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Cliente</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="frmData">
+                <div class="row g-3">
+                    <div class="col-sm-12 col-md-4">
+                        <label for="createdAt" class="form-label">Fecha registro</label>
+                        <input type="date" class="form-control disabled" id="createdAt" name="createdAt" readonly>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <label for="nombres" class="form-label">Nombre del Cliente</label>
+                        <input type="text" class="form-control" id="nombres" name="nombres">
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos">
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-sm-12 col-md-4">
+                        <label for="email" class="form-label">Email cliente</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <label for="nroMovil" class="form-label">Nro Movil</label>
+                        <input type="text" class="form-control" id="nroMovil" name="nroMovil">
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <label for="fechaNacimiento" class="form-label">Fecha
+                            Nacimiento</label>
+                        <input type="date" class="form-control" id="fechaNacimiento"
+                            name="fechaNacimiento">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-guardar">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal2 -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Ventas</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

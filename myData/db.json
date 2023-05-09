@@ -1,0 +1,26 @@
+{
+  "reclutas": [
+    {
+      "nombre": "dsadasd",
+      "edad": "10",
+      "telefono": "",
+      "email": "",
+      "direccion": "",
+      "fechaNacimiento": "",
+      "nroId": "",
+      "fechaIngreso": "",
+      "id_team": "Seleccione un item",
+      "id": 2
+    }
+  ],
+  "teams": [
+    {
+      "nombre": "ggggg",
+      "trainer": "gsdgfd",
+      "id": 2
+    }
+  ],
+  "skills": [],
+  "modulos": [],
+  "evaluaciones": []
+}

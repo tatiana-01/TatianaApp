@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+
+}
+
+body{
+    font-family: 'Tilt Neon', cursive;
+    font-size: 1.2rem;
+    background-color:rgb(19, 26, 36, 0.8);
+    color: white;
+}
+
+.logo{
+    height: 100px;
+    margin: 5px;
+}
+
+.navbar{
+    padding: 1rem 2rem;
+    background-color: #131a24;
+    color:white;
+}
+
+.nav-item{
+    margin:5px;
+    padding: 5px;
+}
+
+.modal-header, .modal-body, .modal-footer{
+    background-color: rgb(19, 26, 36, 0.4);
+}
+
+
+.registro{
+    margin-top: 4rem;
+}
+
+.tabla-recluta{
+    margin-top: 6rem;
+}
+
+.container-select{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-select{
+    display: flex;
+    justify-content: space-evenly;
+}
