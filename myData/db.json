@@ -1,15 +1,27 @@
 {
   "reclutas": [
     {
-      "nombre": "dsadasd",
-      "edad": "10",
-      "telefono": "",
-      "email": "",
-      "direccion": "",
-      "fechaNacimiento": "",
-      "nroId": "",
-      "fechaIngreso": "",
-      "id_team": "Seleccione un item",
+      "nombre": "Primero",
+      "edad": "15",
+      "telefono": "1454654964",
+      "email": "juan@gmail.com",
+      "direccion": "fdasfsd",
+      "fechaNacimiento": "2023-05-02",
+      "nroId": "33333335555",
+      "fechaIngreso": "2023-04-20",
+      "id_team": "2",
+      "id": 1
+    },
+    {
+      "nombre": "Primero",
+      "edad": "15",
+      "telefono": "1454654964",
+      "email": "juan@gmail.com",
+      "direccion": "fdasfsd",
+      "fechaNacimiento": "2023-05-02",
+      "nroId": "33333335555",
+      "fechaIngreso": "2023-04-20",
+      "id_team": "2",
       "id": 2
     }
   ],
@@ -18,6 +30,16 @@
       "nombre": "ggggg",
       "trainer": "gsdgfd",
       "id": 2
+    },
+    {
+      "nombre": "APolo",
+      "trainer": "dfhdskf",
+      "id": 3
+    },
+    {
+      "nombre": "Artemis",
+      "trainer": "dfsdaf",
+      "id": 4
     }
   ],
   "skills": [],

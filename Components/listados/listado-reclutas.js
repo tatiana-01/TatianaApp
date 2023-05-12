@@ -28,7 +28,7 @@ export class ListaRecluta extends HTMLElement{
                 <label for="">Antiguedad</label>
                 <select name="" id="antiSearch">
                     <option value='0'>Seleccione una opcion</option>
-                    <option value='60'>2</option>
+                    <option value='2'>2</option>
                 </select>
             </div>
             <div class="container-select" id="edadSelect" style="display: none;">
@@ -87,7 +87,6 @@ export class ListaRecluta extends HTMLElement{
 
         let select=document.querySelector('#teamSearch');
         select.addEventListener('change',(e)=>{
-            console.log(reclutas);
             let reclutasTeam= reclutas.filter(reclutaT=>reclutaT.id_team==e.target.value);
             let reclutasHtml='';
             for(let recluta of reclutasTeam){
@@ -99,9 +98,12 @@ export class ListaRecluta extends HTMLElement{
                 }
             }
             document.querySelector('#listaReclutas').innerHTML=reclutasHtml;
+            this.delData();
+        this.eventEditData();
         })
         this.selectEdad(reclutas);
         this.resetSelect(reclutas);
+        this.selectAntiguedad(reclutas);
         this.delData();
         this.eventEditData();
         this.mostrarSelect();
@@ -111,10 +113,8 @@ export class ListaRecluta extends HTMLElement{
     selectEdad(reclutas){
         let select=document.querySelector('#search');
         select.addEventListener('click',(e)=>{
-            console.log(e.target.value);
             if(e.target.value=='["#edadSelect",["#teamSelect","#antiguedadSelect"]]'){
                 if(document.querySelector('#ageSearch').value=='18'){
-                    console.log(document.querySelector('#ageSearch').value);
                     let reclutasTeam= reclutas.filter(reclutaT=>parseInt(reclutaT.edad)<18);
                     let reclutasHtml='';
                     for(let recluta of reclutasTeam){
@@ -124,13 +124,14 @@ export class ListaRecluta extends HTMLElement{
                     }
                 
             }
+            this.delData();
+        this.eventEditData();
         })
     }
 
     resetSelect(reclutas){
         let select=document.querySelector('#search');
         select.addEventListener('click',(e)=>{
-            console.log(e.target.value);
             if(e.target.value=='["#search",["#teamSelect","#antiguedadSelect","#edadSelect"]]'){
                 let reclutasHtml='';
                 for(let recluta of reclutas){
@@ -138,7 +139,41 @@ export class ListaRecluta extends HTMLElement{
                 }
                 document.querySelector('#listaReclutas').innerHTML=reclutasHtml;
             }
+            this.delData();
+        this.eventEditData();
         })
+    }
+
+    selectAntiguedad(reclutas){
+        let select=document.querySelector('#antiSearch');
+        select.addEventListener('click',(e)=>{
+            reclutas.forEach((recluta)=>{
+                let tiempo=this.mostrarMes(recluta.fechaIngreso);
+                if(tiempo>=2){
+                    console.log(recluta.nombre);
+                }
+            })
+            this.delData();
+        this.eventEditData();
+        })
+    }
+
+    mostrarMes(fecha){
+        let mes=0;
+        let fechaArrrglo=fecha.split('-')
+        let fechaNueva= `${fechaArrrglo[1]}-${fechaArrrglo[2]}-${fechaArrrglo[0]}`
+        let milisegundos=new Date(fechaNueva).getTime();
+        let resta= (new Date().getTime())-milisegundos;
+        let milisegundosMes=1000 * 60 * 60 * 24 * 30.44;
+        let meses=resta/milisegundosMes;
+        let fechaString= meses.toString().split('.')
+        let decimal=fechaString[1].slice(0,1);
+        if(decimal=='9'){
+            mes=Math.round(meses);
+        }else{
+            mes=parseInt(meses)
+        }
+        return mes;       
     }
     
     getApiReclutas(){
@@ -175,10 +210,8 @@ export class ListaRecluta extends HTMLElement{
 
     delData(){
         let boton=document.querySelectorAll('#eliminar');
-        boton.forEach((element)=>{
-            console.log(element);
+        boton.forEach((element)=>{;
             element.addEventListener('click', (e)=>{
-                console.log('si');
                 opc[e.target.dataset.accion](e.target.dataset.idrecluta);
             })
         })
@@ -213,7 +246,6 @@ export class ListaRecluta extends HTMLElement{
     eventEditData(){
         let boton=document.querySelectorAll('#editar');
         boton.forEach((element)=>{
-            console.log(element);
             element.addEventListener('click', (e)=>{
                 this.getReclutaId(e.target.dataset.idrecluta);
                 this.putData(e.target.dataset.idrecluta);
@@ -235,10 +267,8 @@ export class ListaRecluta extends HTMLElement{
     mostrarSelect(){
         document.querySelector('#search').addEventListener('change', (e) => {
             let data=JSON.parse(e.target.value);
-            console.log(data);
             let ver=document.querySelector(data[0]);
             ver.style.display="block";
-            console.log(data[1]);
             data[1].forEach(element => {
                 let ocultar=document.querySelector(element);
                 ocultar.style.display="none";

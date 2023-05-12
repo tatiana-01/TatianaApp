@@ -42,7 +42,6 @@ export class ListadosAll extends HTMLElement{
                 let data=JSON.parse(e.target.dataset.verocultar);
                 let ver=document.querySelector(data[0]);
                 ver.style.display="block";
-                console.log(data[1]);
                 data[1].forEach(element => {
                     let ocultar=document.querySelector(element);
                     ocultar.style.display="none";

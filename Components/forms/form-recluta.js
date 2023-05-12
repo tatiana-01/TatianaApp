@@ -6,6 +6,7 @@ export class FormRecluta extends HTMLElement{
         this.render();
         this.postData();
         this.getApiTeam();
+        this.mostrarMes();
     }
     render(){
         this.innerHTML=/*html*/`
@@ -68,6 +69,9 @@ export class FormRecluta extends HTMLElement{
             let select=document.querySelector('#team');
             data.id_team=select.value;
             opc[e.target.dataset.accion](data);
+            
+            
+            
         })
     }
 
@@ -94,6 +98,8 @@ export class FormRecluta extends HTMLElement{
         });
 
     }
+
+
     
 }
 customElements.define('form-recluta', FormRecluta);

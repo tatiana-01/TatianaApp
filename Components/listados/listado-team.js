@@ -60,9 +60,7 @@ export class ListaTeam extends HTMLElement{
     delData(){
         let boton=document.querySelectorAll('#eliminar');
         boton.forEach((element)=>{
-            console.log(element);
             element.addEventListener('click', (e)=>{
-                console.log('si');
                 opcTeams[e.target.dataset.accion](e.target.dataset.idteam);
             })
         })
@@ -90,7 +88,6 @@ export class ListaTeam extends HTMLElement{
     eventEditData(){
         let boton=document.querySelectorAll('#editar');
         boton.forEach((element)=>{
-            console.log(element);
             element.addEventListener('click', (e)=>{
                 this.getTeamId(e.target.dataset.idteam);
                 this.putData(e.target.dataset.idteam);
